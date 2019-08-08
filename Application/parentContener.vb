@@ -41,18 +41,19 @@ Public Class parentContener
         End If
         ' Mises a jour
         If CSSoftwareUpdate.checkMAJ Then
-            Dim doMAJ As MsgBoxResult = MsgBox("Une mise à jour est disponible.", MsgBoxStyle.OkOnly, "Mise à jour disponible !")
-            If doMAJ = MsgBoxResult.Ok Then
+            If CSSoftwareUpdate.isXPorBefore Then
+                MsgBox("votre système est obsolète, vous ne pouvez plus recevoir de mises à jour, contactez le CROPDIP pour plus d'information [" & System.Environment.OSVersion.Version.Major & "]", MsgBoxStyle.OkOnly, "Version Système")
+            Else
+                Dim doMAJ As MsgBoxResult = MsgBox("Une mise à jour est disponible.", MsgBoxStyle.OkOnly, "Mise à jour disponible !")
                 CSSoftwareUpdate.runUpdater(False)
                 m_bCloseByUpdate = True
                 CSEnvironnement.delPid()
                 Close()
-                Exit Sub
             End If
-        End If
 
-        ' Initialisation du boot
-        CSDebug.dispInfo("ParentContainer.CheckVersion")
+            ' Initialisation du boot
+            CSDebug.dispInfo("ParentContainer.CheckVersion")
+        End If
 
         Try
             CSBoot.init()

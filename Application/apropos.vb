@@ -37,6 +37,7 @@ Public Class apropos
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents lblDBVersion As System.Windows.Forms.Label
     Friend WithEvents btn_RAZBase As System.Windows.Forms.Button
+    Friend WithEvents laOS As System.Windows.Forms.Label
     Friend WithEvents label_dateVersion As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(apropos))
@@ -49,6 +50,7 @@ Public Class apropos
         Me.btn_RAZBase = New System.Windows.Forms.Button()
         Me.lblDBVersion = New System.Windows.Forms.Label()
         Me.label_dateVersion = New System.Windows.Forms.Label()
+        Me.laOS = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -109,6 +111,7 @@ Public Class apropos
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.laOS)
         Me.Panel1.Controls.Add(Me.btn_RAZBase)
         Me.Panel1.Controls.Add(Me.lblDBVersion)
         Me.Panel1.Controls.Add(Me.label_dateVersion)
@@ -156,6 +159,16 @@ Public Class apropos
         Me.label_dateVersion.TabIndex = 26
         Me.label_dateVersion.Text = "dateVersion"
         '
+        'laOS
+        '
+        Me.laOS.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.laOS.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(123, Byte), Integer), CType(CType(193, Byte), Integer))
+        Me.laOS.Location = New System.Drawing.Point(5, 107)
+        Me.laOS.Name = "laOS"
+        Me.laOS.Size = New System.Drawing.Size(308, 54)
+        Me.laOS.TabIndex = 29
+        Me.laOS.Text = "OS"
+        '
         'apropos
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
@@ -193,6 +206,8 @@ Public Class apropos
 
             ' On récupère le nom du projet
             label_projetName.Text = Application.ProductName
+
+            laOS.Text = System.Environment.OSVersion.VersionString & "[" & System.Environment.OSVersion.Version.Major & "-" & System.Environment.OSVersion.Version.Minor & "]"
 
         Catch ex As Exception
             CSDebug.dispError("apropos_Load" & ex.Message)

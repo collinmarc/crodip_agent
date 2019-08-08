@@ -944,12 +944,6 @@
     <Compile Include="dlgAquisition.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmCrodip.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -1245,6 +1239,30 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Settings.vb" />
+    <Compile Include="Signature\crTestSignature.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crTestSignature.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Signature\dsSign.Designer.vb">
+      <DependentUpon>dsSign.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Signature\frmsignature.Designer.vb">
+      <DependentUpon>frmsignature.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Signature\frmsignature.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Signature\frmTestSignature.Designer.vb">
+      <DependentUpon>frmTestSignature.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Signature\frmTestSignature.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StartApplication.vb" />
     <Compile Include="Web References\WSCrodip_prod\Reference.vb">
       <SubType>code</SubType>
@@ -1288,6 +1306,17 @@
     <Content Include="config\CodesAPE.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Signature\crTestSignature.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crTestSignature.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Signature\frmsignature.resx">
+      <DependentUpon>frmsignature.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Signature\frmTestSignature.resx">
+      <DependentUpon>frmTestSignature.vb</DependentUpon>
+    </EmbeddedResource>
     <None Include="Application\ReglagePulve\ds_Etat_ReglagePulve.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ds_Etat_ReglagePulve.Designer.vb</LastGenOutput>
@@ -1916,6 +1945,17 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+    <None Include="Signature\dsSign.xsc">
+      <DependentUpon>dsSign.xsd</DependentUpon>
+    </None>
+    <None Include="Signature\dsSign.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSign.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Signature\dsSign.xss">
+      <DependentUpon>dsSign.xsd</DependentUpon>
+    </None>
     <None Include="updates.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -2294,9 +2334,6 @@
       <LastGenOutput>cr_Facture.vb</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
     <Content Include="moduleDocumentaire\_parametres\crRapportInspectionFin2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crRapportInspectionFin2.vb</LastGenOutput>

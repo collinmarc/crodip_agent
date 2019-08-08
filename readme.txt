@@ -1,6 +1,6 @@
 TRUNK
 
-Build : 
+Build : 20190808120000
 ----------------------
 #333 : Bloquer les Maj pour les systèmes XP
 
